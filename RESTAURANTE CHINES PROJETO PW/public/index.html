@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushi Otak ! | Home</title>
+    <link rel="shortcut icon" href="https://i.pinimg.com/736x/fd/39/83/fd3983d0b6974f9a42c6735d27f47358.jpg" type="image/x-icon">
+    <style>
+    
+        @font-face {
+            font-family: logo;
+            src: url("../assets/fonts/taller.ttf") format("truetype");
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #156322;
+            border-radius: 6px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #123a19;
+        }
+
+
+        body {
+            
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #ffffff;
+            color: #d99703;
+            border: #c71f2d 8px ridge;
+        }
+
+        .overlay {
+            position: absolute;
+            width: 260px;
+            height: 310px;
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        .left { top: 0; left: 0;  }
+
+        .page {
+            position: relative;
+            z-index: 1;
+            width: 92%;
+            width: 1050px;
+            margin: 25px auto;
+            display: grid;
+            grid-template-columns: 130px 2fr;
+            gap: 40px;
+        }
+
+        .asidebackimage {
+            position: absolute;
+            top: 105px;
+            left: -40px;
+            width: 105px;
+            height: 120px;
+            background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzt5mwQl7ewxV-Qg_stHg3sHrlI9iv75MnHQ&s) center / cover;
+            z-index: 0;
+            border-radius: 100%;
+            box-shadow: 2px 0 8px #0002;
+        }
+        
+
+        aside {
+            background-color: white;
+            position: sticky;
+            top: 155px;
+            height: fit-content;
+            text-align: center;
+        }
+
+        a {
+            display: block;
+            color: rgb(124, 0, 0);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 0;
+            border: 2px dashed #5e0208;
+        }
+
+        a:hover {
+            background: #5e0208;
+            color: white;
+            font-weight: normal;
+
+            border: 2px dashed #5e0208;
+        }
+
+
+        .banner, .box {
+            border-radius: 8px;
+            margin-bottom: 22px;
+        }
+
+        .banner {
+            border: #156322 4px ridge;
+            min-height: 320px;
+            padding: 40px;
+            color: white;
+            text-align: center;
+            background: url(../assets/img/banner.jpeg) center / cover;
+        }
+
+
+        .logo {
+            text-transform: uppercase;
+            font-family: math;
+            text-align: center;
+            margin-top: -160px;
+            font-size: 120px;
+            text-shadow: 1px 9px 0px #165514;
+        }
+        .logo span {
+            display: inline-block;
+            transform: perspective(56px) rotateX(10deg) skewX(-10deg);
+        }
+
+        .banner p {
+            margin-top: 120px;
+            background-color: #fff8f36c;
+            color: rgb(255, 255, 255);
+        }
+
+        .bottombanner {
+            background: url(https://i.pinimg.com/1200x/f4/b8/7f/f4b87fba45c80617f98235b95ffe2afb.jpg) center / cover;
+            height: 200px;
+        }
+
+        .box {
+            background: #156322;
+            padding: 5px;
+            border-left: 3px ridge #d99703;
+        }
+
+        h2 {
+            border: #a73716 4px ridge;
+            text-align: center;
+            text-transform: uppercase;
+            background:  #d99503fb ;
+            color: #ffffff;
+            margin-top: 0;
+            text-shadow: 1px 3px 0px #000000;
+
+        }
+
+        .menu {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .dish {
+            background: #ffffff;
+            border: 1px solid #ffffff;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .dish img {
+            border: #4e0000 3px solid;
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .dish div {
+            padding: 12px;
+        }
+
+        h3, p {
+            text-align: center;
+            margin: 0 0 5px;
+        }
+
+        h3 {
+            border: #4e0000 2px dashed;
+            color: #ffffff;
+            background-color: #9e000e;
+        }
+
+        .price {
+            color: #c71f2d;
+            font-weight: bold;
+        }
+
+        @media (max-width: 750px) {
+            .page, .menu {
+                display: block;
+            }
+
+            aside {
+                top: 0;
+                margin-bottom: 18px;
+            }
+
+            a {
+                display: inline-block;
+                margin: 0 6px;
+            }
+
+            .dish {
+                margin-bottom: 15px;
+            }
+
+            .logo {
+                font-size: 62px;
+                line-height: 55px;
+            }
+        }   
+
+
+    .whitefade{
+        background: linear-gradient(to bottom, #ffffff18, #ffffff);
+    }
+
+    footer {
+        text-align: center;
+        padding: 8px 0 4px 0;
+        background: #4e0000;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+    .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 1em;
+    }
+    
+    
+ .decoracao {
+            position: absolute;
+            right: 14px;
+            top: 120px;
+            writing-mode: vertical-rl;
+            font-size: 40px;
+            color: #1563222f;
+            pointer-events: none;
+            z-index: 1;
+            
+        }
+
+        button {
+            padding: 3px 16px;
+            background-color: #963a04;
+            color: rgb(255, 255, 255);
+            border: #962d04 3px ridge;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+
+    </style>
+</head>
+<body>
+
+    <div class="decoracao">
+    昔むかし、浦島太郎という若い漁師がいました。ある日、浜辺で子供たちが亀をいじめているのを見て、太郎はその亀を助けてやりました。翌日、その亀が太郎の前に現れ、「お礼がしたい」と言って、竜宮城へと案内しました。竜宮城では乙姫様が太郎を温かく迎え、素晴らしい宴が続きました。太郎は楽しい日々を過ごしましたが、やがて故郷の両親が恋しくなりました。帰ることを告げると、乙姫は美しい玉手箱を渡し、「決して開けてはなりません」と言いました。地上に戻ると、村は変わり果て、知る顔は誰もいませんでした。寂しさのあまり、太郎は玉手箱を開けてしまいました。すると白い煙が立ち上り、太郎はたちまち白髪の老人になってしまいました...
+    </div>
+    <img class="overlay left" src="../assets/img/overlay.png" alt="">
+    <div class="page" style="position:relative;">
+        <div class="asidebackimage"></div>
+        <aside style="position:relative; z-index:1;">
+        <a href="#inicio">Inicio</a>
+        <a href="#menu">Cardapio</a>
+        <a href="#contato">Contato</a>
+        </aside>
+
+        <main>
+        <section id="inicio" class="banner">
+        </section>
+        <h1 class="logo"><span>Sushi Otak !!</span></h1>
+            <hr>
+
+        <p>Iguarias tradicionais, pratos e aperitivos</p>
+
+            <section id="menu" class="box">
+            <h2>Cardapio</h2>
+            <div class="menu">
+            <div class="dish"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sushi_food_plate.jpeg" alt="Sushi"><div><h3>Combo Sushi</h3><p>20 pecas variadas</p><p class="price">R$ 44,90</p> <button>PEDIR AGORA!</button></div></div>
+            <div class="dish"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sashimi_plate_with_soy_sauce.jpg" alt="Sashimi"><div><h3>Sashimi</h3><p>Salmao com shoyu</p><p class="price">R$ 36,90</p><button>PEDIR AGORA!</button></div></div>
+            <div class="dish"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tonkotsu_Ramen_(12561843493).jpg" alt="Ramen"><div><h3>Ramen</h3><p>Macarrao com caldo</p><p class="price">R$ 39,90</p><button>PEDIR AGORA!</button></div></div>
+            <div class="dish"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Vegetable_tempura_.jpg" alt="Tempura"><div><h3>Tempura</h3><p>Legumes crocantes</p><p class="price">R$ 27,90</p><button>PEDIR AGORA!</button></div></div>
+            <div class="dish"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gyoza_(15976862986).jpg" alt="Guioza"><div><h3>Guioza</h3><p>6 unidades</p><p class="price">R$ 19,90</p><button>PEDIR AGORA!</button></div></div>
+            <div class="dish"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Katsudon_(1333249283).jpg" alt="Katsudon"><div><h3>Katsudon</h3><p>Arroz e carne empanada</p><p class="price">R$ 34,90</p><button>PEDIR AGORA!</button></div></div>
+            <div class="dish"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sushi_food_plate.jpeg" alt="Hot roll"><div><h3>Hot Roll</h3><p>10 pecas empanadas</p><p class="price">R$ 24,90</p><button>PEDIR AGORA!</button></div></div>
+            <div class="dish"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tonkotsu_Ramen_(12561843493).jpg" alt="Lamen"><div><h3>Lamen</h3><p>Caldo leve com ovo</p><p class="price">R$ 29,90</p></div></div>
+            </div>
+            </section>
+
+          
+        </main>
+    </div>
+    <div class="bottombanner"></div>
+    
+    <footer>
+        <p style="margin-bottom: 6px;">&copy; 2026 Sushi Otak.</p>
+        <div class="footer-links">
+            <a href="../fim.html">Fale Conosco</a>
+            <a href="../fim.html">Conta e Segurança</a>
+            <a href="../fim.html">Vagas Abertas</a>
+            <a href="../fim.html">Termos e condições de uso</a>
+            <a href="../fim.html">Privacidade</a>
+        </div>
+    </footer>
+</body>
+</html>
